@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────────────
+# requirements.txt — exact pinned versions for PartA / PartB / PartC
+# Python 3.10  |  CUDA-capable GPU recommended
+# ─────────────────────────────────────────────────────────────────
+
+# Core deep-learning stack (torchvision 0.20.0 is the exact pair for torch 2.5.0)
+torch==2.5.0
+torchvision==0.20.0
+
+# Numerical / array computing
+# numpy 1.26.4 is the last 1.x release — universally safe with torch 2.5.0,
+# pandas 2.2.x, matplotlib 3.9.x, scikit-learn 1.5.x, and clean-fid 0.1.35.
+numpy==1.26.4
+
+# HuggingFace ecosystem
+# transformers 4.46.3 satisfies the original >=4.45.0 constraint and was
+# released alongside torch 2.5.0 (Oct–Nov 2024).
+# peft 0.13.2 satisfies >=0.12.0 and is tested against transformers 4.46.x.
+# protobuf 4.25.5 is used internally by transformers; 5.x / 6.x introduce
+# breaking API changes that can silently corrupt model loading.
+transformers==4.46.3
+peft==0.13.2
+protobuf==4.25.5
+
+# Vision / image I/O
+Pillow==10.4.0
+
+# Metrics
+sacrebleu==2.4.3          # BLEU scoring (PartB eval_vlm.py)
+clean-fid==0.1.35         # FID computation (PartC compute_fid.py)
+
+# Data / visualisation
+pandas==2.2.3
+matplotlib==3.9.2
+scikit-learn==1.5.2       # TSNE (PartA probe/tsne_viz.py)
+
+# Utilities
+tqdm==4.66.5
