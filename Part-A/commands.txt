@@ -1,0 +1,33 @@
+python main.py train-clip --data-root /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_dataset/Part_A --output-dir /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/clip
+python main.py train-dino --data-root /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_dataset/Part_A --output-dir /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/dino
+
+python main.py run-all \
+    --probe-data-root /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_dataset/Part_Aa \
+    --data-root       /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_dataset/Part_A  \
+    --clip-ckpt  /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/clip/checkpoints/best.pt \
+    --dino-ckpt  /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/dino/checkpoints/last.pt \
+    --tokenizer  /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/clip/tokenizer.json \
+    --output-dir /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs
+
+./UPDATED_CHKPTS_BY_UMANG/best.pt
+./UPDATED_CHKPTS_BY_UMANG/last.pt
+
+python main-modified.py run-all \
+    --probe-data-root /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_dataset/Part_Aa \
+    --data-root       /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_dataset/Part_A  \
+    --clip-ckpt  ./UPDATED_CHKPTS_BY_UMANG/best.pt \
+    --dino-ckpt  ./UPDATED_CHKPTS_BY_UMANG/last_new.pt \
+    --tokenizer  ./UPDATED_CHKPTS_BY_UMANG/tokenizer.json \
+    --output-dir /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/eval_part_a_main_modified
+
+/mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/OLD/clip_old/checkpoints/best.pt
+/mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/OLD/dino_old/checkpoints/last.pt
+/mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/OLD/clip_old/tokenizer.json
+
+python main.py run-all \
+    --probe-data-root /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_dataset/Part_Aa \
+    --data-root       /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_dataset/Part_A  \
+    --clip-ckpt  /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/OLD/clip_old/checkpoints/best.pt \
+    --dino-ckpt  /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/OLD/dino_old/checkpoints/last.pt \
+    --tokenizer  /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/OLD/clip_old/tokenizer.json \
+    --output-dir /mnt/bigdisk/Others/775A2/my_local_dataset_folder/A2_Outputs/eval_part_a_old
